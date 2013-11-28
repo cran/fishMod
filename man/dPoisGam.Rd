@@ -39,6 +39,8 @@ The derivatives are calculated in a similar manner to the density. The derivativ
 Smyth, G. K. (1996) Regression analysis of quantity data with exact zeros. \emph{Proceedings of the Second Australia--Japan Workshop on Stochastic Models in Engineering, Technology and Management}. Technology Management Centre, University of Queensland, pp. 572-580.
 
 Dunn P. K. and Smyth G. K. (2005) Series evaluation of Tweedie exponential dispersion model densities. \emph{Statistics and Computing} \bold{15}: 267-280.
+
+Foster, S.D. and Bravington, M.V. (2013) A Poisson-Gamma Model for Analysis of Ecological Non-Negative Continuous Data. \emph{Journal of Environmental and Ecological Statistics} \bold{20}: 533-552
 }
 \author{Scott D. Foster}
 \examples{

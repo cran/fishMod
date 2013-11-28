@@ -20,6 +20,6 @@
 \references{
 Bax N, Williams A (eds) (1999) Habitat and fisheries production in the South East Fishery. \emph{Final report to FRDC Project 94/040}, CSIRO Marine Research, Hobart, Tasmania, Australia
 
-Foster, S.D. and Bravington, M.V. (2012) A Poisson-Gamma Model for Analysis of Ecological Non-Negative Continuous Data
+Foster, S.D. and Bravington, M.V. (2013) A Poisson-Gamma Model for Analysis of Ecological Non-Negative Continuous Data. \emph{Journal of Environmental and Ecological Statistics} \bold{20}: 533-552
 }
 \keyword{data}

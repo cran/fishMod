@@ -51,18 +51,19 @@ Smyth, G. K. (1996) Regression analysis of quantity data with exact zeros. \emph
 Dunn P. K and Smyth G. K (1996) Randomized Quantile Residuals. \emph{Journal of Computational and Graphical Statistics} \bold{5}: 236-244.
 
 Dunn P. K. and Smyth G. K. (2005) Series evaluation of Tweedie exponential dispersion model densities. \emph{Statistics and Computing} \bold{15}: 267-280.
+
+Foster, S.D. and Bravington, M.V. (2013) A Poisson-Gamma Model for Analysis of Ecological Non-Negative Continuous Data. \emph{Journal of Environmental and Ecological Statistics} \bold{20}: 533-552
 }
 \author{Scott D. Foster}
 \examples{
-##not a great example
-#my.coef <- c(0.6, 1.2, 0, -0.3, 0, -0.5, 0.85)
-#sim.dat <- simReg( n=250, lambda.tau=my.coef[1:3], mu.Z.tau=my.coef[4:6], alpha=my.coef[7])
-#fm <- tglm( mean.form=y~1+x1+x2, data=sim.dat)
-#tmp <- matrix( c( my.coef[1:3] + my.coef[4:6], NA, (2+0.85)/(1+0.85), fm$coef), ncol=2)
-#colnames( tmp) <- c("actual","estimated")
-#rownames( tmp) <- c( names( fm$coef)[1:3], "phi", "p")
-#print( tmp)
-#print( "Data generated using Poisson-sum-of-gammas model and fitted using a Tweedie GLM.)
-#print( "A great fit is not expected -- especially for the first covariate")
+print( "Data generated using Poisson-sum-of-gammas model and fitted using a Tweedie GLM.")
+print( "A great fit is not expected -- especially for the first covariate")
+my.coef <- c(0.6, 1.2, 0, -0.3, 0, -0.5, 0.85)
+sim.dat <- simReg( n=250, lambda.tau=my.coef[1:3], mu.Z.tau=my.coef[4:6], alpha=my.coef[7])
+fm <- tglm( mean.form=y~1+x1+x2, data=sim.dat)
+tmp <- matrix( c( my.coef[1:3] + my.coef[4:6], NA, (2+0.85)/(1+0.85), fm$coef), ncol=2)
+colnames( tmp) <- c("actual","estimated")
+rownames( tmp) <- c( names( fm$coef)[1:3], "phi", "p")
+print( tmp)
 }
 \keyword{misc}

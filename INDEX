@@ -1,8 +1,10 @@
-fishMod-package                                                         How to use fishMod
-deltaLN                                                                 Fitting models based on the Delta Log-Normal distribution.
-dPoisGam                                                                Density, derivatives, distribution function, and random generation for the Poisson-Gamma distribution.
-dTweedie                                                                Density, derivatives, distribution function, and random generation for the Tweedie distribution.
-pgm                                                                     Fitting models based on the Poisson-Gamma model.
-simReg                                                                  Simulate Poisson-Gamma data whose component means vary with covariates.
-tglm                                                                    Fits a Tweedie GLM via maximum likelihood.
-TigerFlathead                                                           Data for Tiger Flathead in South East Survey
+fishMod-package                     How to use fishMod
+deltaLN                             Fitting models based on the Delta Log-Normal distribution.
+dPoisGam                            Density, derivatives, distribution function, and random generation for
+                                    the Poisson-Gamma distribution.
+dTweedie                            Density, derivatives, distribution function, and random generation for
+                                    the Tweedie distribution.
+pgm                                 Fitting models based on the Poisson-Gamma model.
+simReg                              Simulate Poisson-Gamma data whose component means vary with covariates.
+tglm                                Fits a Tweedie GLM via maximum likelihood.
+TigerFlathead                       Data for Tiger Flathead in South East Survey

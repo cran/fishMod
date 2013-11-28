@@ -38,6 +38,8 @@ If residuals are requested then two types are returned: Pearson residuals and ra
 Aitchison J. (1955) On the Distribution of a Positive Random Variable Having a Discrete Probability Mass at the Origin. \emph{Journal of the American Statistical Association} \bold{50} 901-908.
 
 Dunn P. K and Smyth G. K (1996) Randomized Quantile Residuals. \emph{Journal of Computational and Graphical Statistics} \bold{5}: 236-244.
+
+Foster, S.D. and Bravington, M.V. (2013) A Poisson-Gamma Model for Analysis of Ecological Non-Negative Continuous Data. \emph{Journal of Environmental and Ecological Statistics} \bold{20}: 533-552
 }
 \author{Scott D. Foster}
 \keyword{misc}

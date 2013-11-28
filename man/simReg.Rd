@@ -23,6 +23,8 @@ The Gamma mean is given by mu.Z=exp( X \%*\% mu.Z.tau) where X is identical to b
 }
 \value{\item{ A data frame containing the random draws, the offset (if not NULL), and the covariates. The data frame has an attribute called "coef" that lists the values used for the simulation.}{}
 }
+\references{Foster, S.D. and Bravington, M.V. (2013) A Poisson-Gamma Model for Analysis of Ecological Non-Negative Continuous Data. \emph{Journal of Environmental and Ecological Statistics} \bold{20}: 533-552
+}
 \author{Scott D. Foster}
 \examples{
 sim.dat <- simReg( n=250, lambda.tau=c(0.6, 1.2, 0), mu.Z.tau=c(-0.3, 0, -0.5), alpha=0.85, X=NULL)

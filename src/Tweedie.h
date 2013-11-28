@@ -4,16 +4,15 @@
 #define Tweedie_hh
 
 #include<vector>
-#include<algorithm>
+//#include<algorithm>
+//#include<time.h>
+//#include<iostream>
 
-#include<R.h>
 #include<Rinternals.h>
 #include<Rmath.h>
-#include<R_ext/Utils.h>
+#include<R.h>
+//#include<R_ext/Utils.h>
 
-#include<time.h>
-
-#include<iostream>
 
 using std::vector;         // use vector as abbreviation for std::vector
 

@@ -1,0 +1,14 @@
+export( "deltaLN",
+"dPoisGam",
+"dPoisGamDerivs",
+"dTweedie",
+"pgm",
+"pPoisGam",
+"pTweedie",
+"rPoisGam",
+"rTweedie",
+"simReg",
+"tglm",
+"tglm.fit",
+"TigerFlathead")
+

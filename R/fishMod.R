@@ -6,12 +6,16 @@ function ( ln.form, binary.form, data, residuals=TRUE)
   temp <- model.frame( ln.form, data=as.data.frame( data))
   X <- model.matrix( ln.form, temp)
   offy <- model.offset( temp)
+  if( is.null( offy))
+    offy <- rep( 0, nrow( X))
 
   nonzeros <- model.response( temp)>0
   temp.ln <- model.frame( ln.form, data=as.data.frame( data[nonzeros,]))
   nz.y <- log( model.response( temp.ln))
   nz.X <- model.matrix( ln.form, temp.ln)
   nz.offset <- model.offset( temp.ln)
+  if (is.null(nz.offset)) 
+    nz.offset <- rep(0, length(nz.y))
 
   temp.bin <- model.frame( binary.form, data=as.data.frame( data))
   temp.bin <- model.matrix( binary.form, temp.bin)

@@ -1,5 +1,20 @@
 # This is package fishMod 
 
+".onLoad" <-
+function( libname, pkgname){
+   # Generic DLL loader
+   dll.path <- file.path( libname, pkgname, 'libs')
+   if( nzchar( subarch <- .Platform$r_arch))
+     dll.path <- file.path( dll.path, subarch)
+   this.ext <- paste( sub( '.', '[.]', .Platform$dynlib.ext, fixed=TRUE), '$', sep='')
+
+   dlls <- dir( dll.path, pattern=this.ext, full.names=FALSE)
+   names( dlls) <- dlls
+   if( length( dlls)) 
+     lapply( dlls, function( x) library.dynam( sub( this.ext, '', x), package=pkgname, lib.loc=libname))
+}
+
+
 "deltaLN" <-
 function ( ln.form, binary.form, data, residuals=TRUE) 
 {
@@ -324,21 +339,6 @@ function(x0, f, m=NULL, D.accur=4, eps=NULL, ...) {
       D.temp.f[,jj]<-f(D.xd, ...) }
     D.deriv[,ii]<-rowSums(D.w*D.temp.f)/D.h[ii] }
   return( D.deriv)
-}
-
-
-".onLoad" <-
-function( libname, pkgname){
-   # Generic DLL loader
-   dll.path <- file.path( libname, pkgname, 'libs')
-   if( nzchar( subarch <- .Platform$r_arch))
-     dll.path <- file.path( dll.path, subarch)
-   this.ext <- paste( sub( '.', '[.]', .Platform$dynlib.ext, fixed=TRUE), '$', sep='')
-
-   dlls <- dir( dll.path, pattern=this.ext, full.names=FALSE)
-   names( dlls) <- dlls
-   if( length( dlls)) 
-     lapply( dlls, function( x) library.dynam( sub( this.ext, '', x), package=pkgname, lib.loc=libname))
 }
 
 
@@ -778,4 +778,183 @@ function ( x, y, wts=NULL, offset=rep( 0, length( y)), inits=rnorm( ncol( x)), p
 
 
 }
+
+# MVB's workaround for futile CRAN 'no visible blah' check:
+globalVariables( package="fishMod",
+  names=c( ".Traceback"
+    ,"dll.path"
+    ,"libname"
+    ,"pkgname"
+    ,"subarch"
+    ,"r_arch"
+    ,"this.ext"
+    ,"dynlib.ext"
+    ,"dlls"
+    ,"x"
+    ,"temp"
+    ,"model.frame"
+    ,"ln.form"
+    ,"data"
+    ,"X"
+    ,"model.matrix"
+    ,"offy"
+    ,"model.offset"
+    ,"nonzeros"
+    ,"model.response"
+    ,"temp.ln"
+    ,"nz.y"
+    ,"nz.X"
+    ,"nz.offset"
+    ,"temp.bin"
+    ,"binary.form"
+    ,"bin.X"
+    ,"lnMod"
+    ,"lm"
+    ,"binMod"
+    ,"glm"
+    ,"binomial"
+    ,"stdev"
+    ,"sigma"
+    ,"coefs"
+    ,"coef"
+    ,"logl"
+    ,"dlnorm"
+    ,"fitted"
+    ,"dbinom"
+    ,"n"
+    ,"ncovars"
+    ,"nnonzero"
+    ,"nzero"
+    ,"AIC"
+    ,"BIC"
+    ,"var"
+    ,"lpv"
+    ,"pv"
+    ,"residuals"
+    ,"resids"
+    ,"plnorm"
+    ,"runif"
+    ,"qnorm"
+    ,"res"
+    ,"mu.N"
+    ,"lambda"
+    ,"mu.Z"
+    ,"alpha"
+    ,"y"
+    ,"LOG"
+    ,"do.checks"
+    ,"tmp"
+    ,"mu"
+    ,"p"
+    ,"phi"
+    ,"tau"
+    ,"dens"
+    ,"mu.p"
+    ,"X.p"
+    ,"parms"
+    ,"offsetty"
+    ,"mu.g"
+    ,"X.g"
+    ,"wts"
+    ,"tail"
+    ,"alpha1"
+    ,"dTweedparms"
+    ,"deri.lambda"
+    ,"deri.mu"
+    ,"deri.alpha"
+    ,"deri.all"
+    ,"p.flag"
+    ,"phi.flag"
+    ,"DTweedparmsDmu"
+    ,"derivs"
+    ,"DTweedparmsDphi"
+    ,"tmpPhi"
+    ,"dalphadp"
+    ,"DTweedparmsDp"
+    ,"tmpP"
+    ,"D.n"
+    ,"x0"
+    ,"m"
+    ,"D.f0"
+    ,"f"
+    ,"..."
+    ,"D.accur"
+    ,"D.w"
+    ,"D.co"
+    ,"D.n.c"
+    ,"eps"
+    ,"macheps"
+    ,"double.eps"
+    ,"D.h"
+    ,"D.deriv"
+    ,"ii"
+    ,"D.temp.f"
+    ,"jj"
+    ,"D.xd"
+    ,"e"
+    ,"p.form"
+    ,"temp.p"
+    ,"offset.p"
+    ,"wts1"
+    ,"model.weights"
+    ,"tmp.form"
+    ,"g.form"
+    ,"temp.g"
+    ,"inits"
+    ,"fm"
+    ,"nlminb"
+    ,"par"
+    ,"vcov"
+    ,"vcovar"
+    ,"scores"
+    ,"muLamb"
+    ,"muMuZ"
+    ,"fitMu"
+    ,"ICadj"
+    ,"objective"
+    ,"convergence"
+    ,"iterations"
+    ,"evaluations"
+    ,"lambdaMax"
+    ,"N"
+    ,"logfmax"
+    ,"estlogf"
+    ,"lo.N"
+    ,"lambdaMin"
+    ,"hi.N"
+    ,"cdf"
+    ,"pois.den"
+    ,"dpois"
+    ,"incgamma.den"
+    ,"pchisq"
+    ,"its"
+    ,"ps"
+    ,"my.fun"
+    ,"rgamma"
+    ,"np"
+    ,"rpois"
+    ,"rans"
+    ,"lambda.tau"
+    ,"mu.Z.tau"
+    ,"rnorm"
+    ,"offset2"
+    ,"offset1"
+    ,"mean.form"
+    ,"fm1"
+    ,"abit"
+    ,"ystar"
+    ,"poisson"
+    ,"ptemp"
+    ,"disDev"
+    ,"deviance"
+    ,"disPear"
+    ,"dis"
+    ,"fmTGLM"
+    ,"iter.max"
+    ,"my.lower"
+    ,"my.upper"
+    ,"offset"
+    ,"phi1"
+    ,"p1"
+))
 

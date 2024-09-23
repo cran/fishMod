@@ -19,7 +19,7 @@ SEXP dTweedie( SEXP y, SEXP muN, SEXP muZ, SEXP alpha, SEXP myLOG)
   double beta0, z1, z2, logW, *logf;	//names are pretty obvious from supporting documentation
 
   SEXP res;	//R object to return
-  PROTECT(res = allocVector(REALSXP, len));	//initiating return object
+  PROTECT(res = Rf_allocVector(REALSXP, len));	//initiating return object
 
   logf = REAL( res);	//array to work with
   for( size_t i=0; i<len; i++){		//cycle through all ys
@@ -28,7 +28,7 @@ SEXP dTweedie( SEXP y, SEXP muN, SEXP muZ, SEXP alpha, SEXP myLOG)
     else{
       beta0 = muZVec[i] / alphaVec[i];
       z1 = log( muNVec[i]) + alphaVec[i]*log( yVec[i] / muZVec[i]) + 1;
-      z2 = 0.5*log( alphaVec[i]) - log( 2*PI) + 1;
+      z2 = 0.5*log( alphaVec[i]) - log( M_2PI) + 1;
       logW = findW( yVec[i], muNVec[i], muZVec[i], alphaVec[i], beta0, z1, z2);	//Calculate Bessel Function
       logf[i] = -yVec[i] / beta0 - muNVec[i] - log( yVec[i]) + logW;
     }
@@ -51,7 +51,7 @@ double dTweedie( double y, double muN, double muZ, double alpha, int myLog)
   else{
     beta0 = muZ / alpha;
     z1 = log( muN) + alpha*log( y / muZ) + 1;
-    z2 = 0.5*log( alpha) - log( 2*PI) + 1;
+    z2 = 0.5*log( alpha) - log( M_2PI) + 1;
     logW = findW( y, muN, muZ, alpha, beta0, z1, z2);	//Calculate Bessel Function
     logf = -y / beta0 - muN - log( y) + logW;
   }
@@ -90,7 +90,7 @@ double logWfun( double j1, double y1, double muN1, double alpha1, double beta1)
 /*double mylgamma( double x)
 {
 	double res;
-	res = ( z+0.5) * log( z) - z + 0.5*log(2*PI);
+	res = ( z+0.5) * log( z) - z + 0.5*log(M_2PI);
 	return( res);
 }*/
 

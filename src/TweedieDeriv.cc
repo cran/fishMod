@@ -36,7 +36,7 @@ SEXP dTweedieDeriv( SEXP y, SEXP muN, SEXP muZ, SEXP alpha)
       logWjs.clear();
       beta0 = muZVec[i] / alphaVec[i];
       z1 = log( muNVec[i]) + alphaVec[i]*log( yVec[i] / muZVec[i]) + 1;
-      z2 = 0.5*log( alphaVec[i]) - log( 2*PI) + 1;
+      z2 = 0.5*log( alphaVec[i]) - log( M_2PI) + 1;
       findWDeriv( yVec[i], muNVec[i], muZVec[i], alphaVec[i], beta0, z1, z2, jmax, jlims, deri);	//Calculate Bessel Function and its derivatives w.r.t. alpha, mu.Z and lambda. Note that logWjs and jmax, jlims and deri are all altered in this call
       tmpPt[MATREF(i,0,len)] = -1 + deri.at(1);			//updating the return object
       tmpPt[MATREF(i,1,len)] = yVec[i]*alphaVec[i] / pow( muZVec[i], 2) + deri.at(2);
@@ -117,7 +117,7 @@ void dTGLM( vector<double> &outDerivs, double *X, int i, int n, const double y, 
 		logWjs.clear();
 		Beta0 = muZ / alpha;
 		z1 = log( lambda) + alpha*log( y / muZ) + 1;
-		z2 = 0.5*log( alpha) - log( 2*PI) + 1;
+		z2 = 0.5*log( alpha) - log( M_2PI) + 1;
 		findWDeriv( y, lambda, muZ, alpha, Beta0, z1, z2, jmax, jlims, deri);	//Calculate Bessel Function and its derivatives w.r.t. alpha, mu.Z and lambda. Note that logWjs and jmax, jlims and deri are all altered in this call
 		tmpPt.at(0) = -1 + deri.at(1);			//updating the return object
 		tmpPt.at(1) = y*alpha / pow( muZ, 2) + deri.at(2);

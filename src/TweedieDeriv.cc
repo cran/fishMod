@@ -23,7 +23,7 @@ SEXP dTweedieDeriv( SEXP y, SEXP muN, SEXP muZ, SEXP alpha)
   vector<double> logWjs;
 
   SEXP res;	//R object to return
-  PROTECT(res = allocMatrix(REALSXP, len, 3));	//initiating return object
+  PROTECT(res = Rf_allocMatrix(REALSXP, len, 3));	//initiating return object
 
   tmpPt = REAL( res);	//array to work with
   for( size_t i=0; i<len; i++){		//cycle through all ys
@@ -79,7 +79,7 @@ extern "C" {
 	std::cout << "\n";
 
 	SEXP res;	//R object to return
-	PROTECT(res = allocMatrix(REALSXP, 1, 3));	//initiating return object
+	PROTECT(res = Rf_allocMatrix(REALSXP, 1, 3));	//initiating return object
 	UNPROTECT( 1);
 	return res;
 }

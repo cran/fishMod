@@ -1,8 +1,7 @@
-20265b73a1719af8cad6ae4cfa978322 *DESCRIPTION
-1f8cae1ce8d9bb34f5920feb3dbcd3c0 *INDEX
+31f15b52cd8f1444d915cb55d09d1d23 *DESCRIPTION
 3c1f2d9cd0bdfe775f10e876e5711ab7 *NAMESPACE
 8d88755bc0ce8acda02c96f3454166a5 *R/fishMod.R
-7fdbbb6ed3fae00ec63ad7abe5b13357 *R/sysdata.rda
+77d878398b05c9df99160fc1e7a62b96 *R/sysdata.rda
 7ba6ef7e77a79deab0be234e23d12f96 *man/00fishMod-package.Rd
 c9bf46de28ef94b54b8f48a23899617d *man/TigerFlathead.Rd
 6d1f1731da59b6fa94daed30bdbd8f17 *man/dPoisGam.Rd
@@ -13,4 +12,4 @@ dad35389a0ba31341852a72f17de68d2 *man/deltaLN.Rd
 4d2f435d954dabdb202536fcb68ff6e6 *man/tglm.Rd
 34ed7ec76c3cb70ff38c06dc6d4a5d36 *src/Tweedie.cc
 bb8dedc924c8de13fdd6771f6c3b99e7 *src/Tweedie.h
-14e46218f57c7aeac3d0d313ff80750f *src/TweedieDeriv.cc
+e6a4f0956dd83c8c9b4b8fcfb2f064f0 *src/TweedieDeriv.cc
